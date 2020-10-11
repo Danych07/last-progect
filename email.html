@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>email</title>
+  <script>
+   function isEmail() {
+    var str = document.getElementById("email").value;
+    var status = document.getElementById("status");
+    var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+    if (re.test(str)) status.innerHTML = "Адрес правильний";
+      else status.innerHTML = "Адрес неправильний";
+    if(isEmpty(str)) status.innerHTML = "Поле пусте";
+   }
+   function isEmpty(str){
+    return (str == null) || (str.length == 0);
+   }
+  </script>
+ </head> 
+ <body>
+  <form action="">
+   <p>Введіть адрес електронної пошти і нажміть перевірити</p>
+   <p><input type="text" id="email"> <span id="status"></span></p>
+   <p><input type="button" value="перевірити" onclick="isEmail()"></p>
+  </form>
+ </body>
+</html>
